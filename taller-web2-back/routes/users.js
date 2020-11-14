@@ -8,4 +8,7 @@ router.get('/', user_controller.index);
 /*POST user*/
 router.post('/', user_controller.create)
 
+router.put('/:id', user_controller.update)
+
+router.delete('/:id', user_controller.delete)
 module.exports = router;

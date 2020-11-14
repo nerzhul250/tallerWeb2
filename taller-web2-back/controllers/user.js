@@ -11,13 +11,6 @@ exports.index = function (req, res, next) {
     })
 }
 
-exports.show = function (req, res, next) {
-    User.find(function (err, users) {
-        if (err) return console.error(err);
-        res.send(users)
-    })
-}
-
 exports.create = function (req, res, next) {
     console.log(req.body)
     const newUser = new User({
@@ -34,5 +27,21 @@ exports.create = function (req, res, next) {
         if (err) return next(err);
         console.log('A FUCKING USER HAS BEEN SAVED')
         res.send('A user has been saved successfully')
+    })
+}
+
+exports.update = function(req, res, next){
+    User.findByIdAndUpdate(req.params.id, {$set: req.body},(err, user) => {
+        if (err)
+            return next(err)
+        res.send("User updated succesfully")
+    })
+}
+
+exports.delete = function(req, res, next) {
+    User.findByIdAndRemove(req.params.id, (err, user) => {
+        if (err)
+            return next(err)
+        res.send("User eliminated succesfully")
     })
 }
