@@ -274,6 +274,12 @@ export default {
       dialogDelete (val) {
         val || this.closeDelete()
       },
+    },
+    mounted(){
+        api.get('/users').then((res)=>{
+            this.usuarios=res.data;
+            console.log(res.data)
+        })
     }
 }
 </script>
