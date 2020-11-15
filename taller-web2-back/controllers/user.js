@@ -25,7 +25,6 @@ exports.create = function (req, res, next) {
 
     newUser.save(function (err, newUser) {
         if (err) return next(err);
-        console.log('A FUCKING USER HAS BEEN SAVED')
         res.send('A user has been saved successfully')
     })
 }
@@ -43,5 +42,13 @@ exports.delete = function(req, res, next) {
         if (err)
             return next(err)
         res.send("User eliminated succesfully")
+    })
+}
+
+exports.search = function(req, res, next) {
+    User.findById(req.params.id, (err, user) => {
+        if (err)
+            return next(err)
+        res.send(user)
     })
 }

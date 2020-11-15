@@ -4,7 +4,7 @@ var user_controller = require('../controllers/user')
 
 /* GET users listing. */
 router.get('/', user_controller.index);
-
+router.get('/:id', user_controller.search);
 /*POST user*/
 router.post('/', user_controller.create)
 
