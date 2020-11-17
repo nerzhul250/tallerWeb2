@@ -1,2 +1,8 @@
 # tallerWeb2
-Este taller tiene como proposito final acabar con las almas de los estudiantes, chupandoles toda energia vital y de toda esperanz futura que tengan
+
+npm install
+
+npm run dev
+
+DEPLOYMENT:
+https://rocky-cove-36729.herokuapp.com/
